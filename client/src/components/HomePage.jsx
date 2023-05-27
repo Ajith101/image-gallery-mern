@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import ImageCard from "./imageList/imageCard";
 import axios from "axios";
 import ImagePreview from "./imageList/ImagePreview";
+import Images from "./imageList/Images";
 
 export const BASE_URL = "https://image-gallery-mern.vercel.app";
 
@@ -49,7 +49,7 @@ const HomePage = () => {
 
   const displayAllImages = allImages?.map((item) => {
     return (
-      <ImageCard
+      <Images
         setPopup={setPopup}
         setShowImage={setShowImage}
         item={item}

@@ -1,7 +1,7 @@
 import React from "react";
 import { BASE_URL } from "../HomePage";
 
-const ImageCard = ({ item, setShowImage, setPopup }) => {
+const Images = ({ item, setShowImage, setPopup }) => {
   const handlePopUp = () => {
     setShowImage(true);
     setPopup(`${BASE_URL}${item.fileName}`);
@@ -19,4 +19,4 @@ const ImageCard = ({ item, setShowImage, setPopup }) => {
   );
 };
 
-export default ImageCard;
+export default Images;
