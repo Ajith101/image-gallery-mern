@@ -3,7 +3,7 @@ import ImageCard from "./imageList/imageCard";
 import axios from "axios";
 import ImagePreview from "./imageList/ImagePreview";
 
-export const BASE_URL = "http://localhost:2020";
+export const BASE_URL = "https://image-gallery-mern.vercel.app";
 
 const HomePage = () => {
   const [allImages, setAllImages] = useState([]);
