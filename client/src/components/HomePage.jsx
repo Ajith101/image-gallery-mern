@@ -4,7 +4,7 @@ import ImagePreview from "./imageList/ImagePreview";
 import Images from "./imageList/Images";
 import FileBase from "react-file-base64";
 
-export const BASE_URL = "https://image-gallery-mern.vercel.app";
+export const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 const HomePage = () => {
   const [allImages, setAllImages] = useState([]);
