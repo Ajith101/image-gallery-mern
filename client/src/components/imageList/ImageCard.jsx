@@ -4,7 +4,7 @@ import { BASE_URL } from "../HomePage";
 const ImageCard = ({ item, setShowImage, setPopup }) => {
   const handlePopUp = () => {
     setShowImage(true);
-    setPopup(`${BASE_URL}${item.fileName}`);
+    setPopup(item.fileName);
   };
 
   return (

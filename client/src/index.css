@@ -7,3 +7,32 @@
 body {
   font-family: "Roboto", sans-serif;
 }
+/* .input-file {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} */
+.input-file input[type="file"]::-webkit-file-upload-button {
+  color: #eed8c0;
+  border-radius: 10px;
+  border: 1px solid #eed8c0;
+  font-size: 16px;
+  font-weight: 300;
+  text-align: center;
+  background: #fff;
+}
+/* .input-file::before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #eed8c0;
+  border-radius: 9999px;
+  border: 1px solid #eed8c0;
+  width: 35px;
+  height: 35px;
+  content: "+";
+  font-size: 30px;
+  font-weight: 300;
+  text-align: center;
+} */
