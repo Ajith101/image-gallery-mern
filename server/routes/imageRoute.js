@@ -9,7 +9,7 @@ const router = express.Router();
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     // Specify the directory where you want to store uploaded files
-    cb(null, "public/images");
+    cb(null, "tmp/");
   },
   filename: function (req, file, cb) {
     // Generate a unique name for the uploaded file
@@ -32,7 +32,7 @@ router.post("/upload", upload.single("upload_file"), (req, res) => {
     if (req.file) {
       const newFile = {
         id: uuidv4(),
-        fileName: `/images/${req.file.filename}`,
+        fileName: `/tmp/${req.file.filename}`,
       };
       allImageData.push(newFile);
       return res.json(allImageData);
