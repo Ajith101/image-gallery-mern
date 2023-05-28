@@ -9,7 +9,7 @@ const router = express.Router();
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     // Specify the directory where you want to store uploaded files
-    cb(null, "tmp/");
+    cb(null, "public/images");
   },
   filename: function (req, file, cb) {
     // Generate a unique name for the uploaded file
@@ -32,13 +32,13 @@ router.post("/upload", upload.single("upload_file"), (req, res) => {
     if (req.file) {
       const newFile = {
         id: uuidv4(),
-        fileName: `/tmp/${req.file.filename}`,
+        fileName: `/images/${req.file.filename}`,
       };
       allImageData.push(newFile);
       return res.json(allImageData);
     }
   } catch (error) {
-    return res.status(400).json({ message: "Spmething went wrong" });
+    return res.status(400).json({ message: "Something went wrong" });
   }
 });
 
