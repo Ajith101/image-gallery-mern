@@ -1,34 +1,9 @@
 const express = require("express");
-const multer = require("multer");
-const { v4: uuidv4 } = require("uuid");
-const ImageModel = require("../models/imageList");
+const { getAllPost, createAnewPOst } = require("../controller/imageController");
 
 const router = express.Router();
 
-// ceate a new image post
-router.post("/new", async (req, res) => {
-  const fileName = req.body;
-  const newPost = new ImageModel({
-    ...fileName,
-    added_on: new Date().toISOString(),
-  });
-
-  try {
-    await newPost.save();
-    const allPost = await ImageModel.find();
-    return res.status(200).json(allPost);
-  } catch (error) {
-    return res.status(404).json({ message: "Something went wrong" });
-  }
-});
-
-router.get("/", async (req, res) => {
-  try {
-    const allIMagesDatas = await ImageModel.find();
-    return res.json(allIMagesDatas);
-  } catch (error) {
-    return res.status(400).json({ message: "Something went wrong" });
-  }
-});
+router.get("/", getAllPost);
+router.post("/new", createAnewPOst);
 
 module.exports = router;

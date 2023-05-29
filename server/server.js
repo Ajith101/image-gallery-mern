@@ -10,6 +10,9 @@ const app = express();
 app.use(cors());
 app.use(express.json({ limit: "30mb", extended: true }));
 app.use(express.urlencoded({ limit: "30mb", extended: true }));
+app.use("*", (req, res) => {
+  res.status(404).json({ message: "Something went wrong" });
+});
 
 app.use("/image", imageRoute);
 
