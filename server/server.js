@@ -5,7 +5,6 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 
 const app = express();
-const PORT = process.env.PORT || 2040;
 
 // middlewares
 app.use(cors());
@@ -20,7 +19,7 @@ mongoose
     UseNewUrlParser: true,
   })
   .then(
-    app.listen(PORT, () => {
+    app.listen(process.env.PORT, () => {
       console.log(`connected to mongoDB with ${PORT}`);
     })
   )
