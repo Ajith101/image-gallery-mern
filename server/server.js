@@ -23,7 +23,7 @@ mongoose
   })
   .then(
     app.listen(process.env.PORT, () => {
-      console.log(`connected to mongoDB with ${PORT}`);
+      console.log(`connected to mongoDB with `);
     })
   )
   .catch((err) => {
