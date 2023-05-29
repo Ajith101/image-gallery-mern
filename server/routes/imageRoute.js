@@ -22,8 +22,13 @@ router.post("/new", async (req, res) => {
   }
 });
 
-router.get("/", (req, res) => {
-  res.send("Hiiii");
+router.get("/", async (req, res) => {
+  try {
+    const allIMagesDatas = await ImageModel.find();
+    res.status(200).json(allIMagesDatas);
+  } catch (error) {
+    res.status(400).json({ message: "Something went wrong" });
+  }
 });
 
 module.exports = router;
