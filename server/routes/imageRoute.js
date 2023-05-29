@@ -25,9 +25,9 @@ router.post("/new", async (req, res) => {
 router.get("/", async (req, res) => {
   try {
     const allIMagesDatas = await ImageModel.find();
-    res.status(200).json(allIMagesDatas);
+    return res.json(allIMagesDatas);
   } catch (error) {
-    res.status(400).json({ message: "Something went wrong" });
+    return res.status(400).json({ message: "Something went wrong" });
   }
 });
 
