@@ -22,50 +22,8 @@ router.post("/new", async (req, res) => {
   }
 });
 
-// const uploadFolder = "../public/images";
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    // Specify the directory where you want to store uploaded files
-    cb(null, "public/images");
-  },
-  filename: function (req, file, cb) {
-    // Generate a unique name for the uploaded file
-    const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
-    const extension = file.originalname.split(".").pop();
-    cb(null, file.fieldname + "-" + uniqueSuffix + "." + extension);
-  },
-});
-
-const upload = multer({ storage: storage });
-
-const allImageData = [];
-
-router.get("/", async (req, res) => {
-  const allImages = await ImageModel.find();
-  // res.status(200).json(allImages);
-  // try {
-  //   if (allImageData) {
-  //     return res.status(200).json(allImages);
-  //   }
-  // } catch (error) {
-  //   return res.status(400).json({ message: "Something went wrong" });
-  // }
+router.get("/", (req, res) => {
   res.send("Hiiii");
-});
-
-router.post("/upload", upload.single("upload_file"), (req, res) => {
-  try {
-    if (req.file) {
-      const newFile = {
-        id: uuidv4(),
-        fileName: `/images/${req.file.filename}`,
-      };
-      allImageData.push(newFile);
-      return res.json(allImageData);
-    }
-  } catch (error) {
-    return res.status(400).json({ message: "Something went wrong" });
-  }
 });
 
 module.exports = router;
