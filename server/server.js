@@ -11,7 +11,6 @@ const PORT = process.env.PORT || 2040;
 app.use(cors());
 app.use(express.json({ limit: "30mb", extended: true }));
 app.use(express.urlencoded({ limit: "30mb", extended: true }));
-app.use(express.static("public"));
 
 app.use("/image", imageRoute);
 
