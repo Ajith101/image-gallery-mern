@@ -43,13 +43,14 @@ const allImageData = [];
 router.get("/", async (req, res) => {
   const allImages = await ImageModel.find();
   // res.status(200).json(allImages);
-  try {
-    if (allImageData) {
-      return res.status(200).json(allImages);
-    }
-  } catch (error) {
-    return res.status(400).json({ message: "Something went wrong" });
-  }
+  // try {
+  //   if (allImageData) {
+  //     return res.status(200).json(allImages);
+  //   }
+  // } catch (error) {
+  //   return res.status(400).json({ message: "Something went wrong" });
+  // }
+  res.send("Hiiii");
 });
 
 router.post("/upload", upload.single("upload_file"), (req, res) => {
