@@ -1,6 +1,11 @@
-# Image Gallery MERN App Readme
+# Image Gallery
 
 The Image Uploader App allows users to upload images to the server and view them in the application. It is built using React and Nodejs, and provides a user-friendly interface.
+
+![image-gallery-app](https://github.com/Ajith101/image-gallery-mern/assets/41799543/3390d2bc-84ea-4aed-8654-52797203a969)
+![image-gallery-app](https://github.com/Ajith101/image-gallery-mern/assets/41799543/54deaf55-ecb1-45ca-b3d1-b859a28539c0)
+![image-gallery-app](https://github.com/Ajith101/image-gallery-mern/assets/41799543/3c14085e-d980-4c65-b2d3-8e7d3b4e1a0a)
+![image-gallery-app](https://github.com/Ajith101/image-gallery-mern/assets/41799543/a79ab1c1-391a-4e02-8b56-e2bef781253f)
 
 ## Features
 
