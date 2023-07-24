@@ -3,7 +3,7 @@ import axios from "axios";
 import ImagePreview from "../components/imageList/ImagePreview";
 import Images from "../components/imageList/Images";
 
-export const BASE_URL = "https://image-gallery-mern.vercel.app";
+export const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 const HomePage = () => {
   const [allImages, setAllImages] = useState([]);
@@ -38,6 +38,7 @@ const HomePage = () => {
     try {
       const response = await axios(`${BASE_URL}/image`);
       setAllImages(response.data);
+      console.log(response.data);
     } catch (error) {
       console.log(error);
     }
@@ -59,15 +60,15 @@ const HomePage = () => {
   });
 
   return (
-    <div className="mb-[84px] flex h-full w-full flex-col items-center justify-center">
-      <div className="flex h-full w-[90%] flex-col items-center sm:w-[80%] lg:w-[946px]">
-        <h1 className="mt-[81px] text-[32px] font-[400] md:mb-[12px] md:text-[50px]">
+    <div className="flex w-full flex-col items-center justify-center pb-[84px]">
+      <div className="flex w-[90%] flex-col items-center sm:w-[80%] lg:w-[946px]">
+        <h1 className="mt-[10px] text-[32px] font-[400] md:text-[50px]">
           Photo Gallery
         </h1>
-        <h3 className="text-[18px] font-[300] text-[#ACACAC] sm:mb-[76px] sm:text-[32px]">
-          A picture is worth thousand words.
-        </h3>
         <form className="flex flex-col items-center justify-center">
+          <h3 className="text-[18px] font-[300] text-[#ACACAC] sm:mb-[76px] sm:text-[32px]">
+            A picture is worth thousand words.
+          </h3>
           {imageDetail && (
             <img
               src={URL.createObjectURL(imageDetail)}
@@ -77,9 +78,11 @@ const HomePage = () => {
           )}
           <label
             htmlFor="upload_file"
-            className="mt-[20px] flex h-[35px] w-[35px] cursor-pointer items-center justify-center rounded-full border-[1px] border-[#EED8C0] text-center text-[30px] font-[300] text-[#EED8C0]"
+            className="relative mt-[15px] flex h-[35px] w-[35px] cursor-pointer rounded-full border-[1px] border-[#EED8C0] text-center text-[30px] font-[300] text-[#EED8C0]"
           >
-            +
+            <span className="absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]">
+              +
+            </span>
           </label>
           {imageDetail && (
             <h3 className="text-[22px] font-[400] text-[#ACACAC]">

@@ -35,7 +35,7 @@ router.post("/upload", upload.single("upload_file"), (req, res) => {
         fileName: `/images/${req.file.filename}`,
       };
       allImageData.push(newFile);
-      return res.json(allImageData);
+      return res.status(200).json(allImageData);
     }
   } catch (error) {
     return res.status(400).json({ message: "Something went wrong" });
