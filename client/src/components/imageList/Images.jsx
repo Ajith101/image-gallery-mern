@@ -1,5 +1,5 @@
 import React from "react";
-import { BASE_URL } from "../HomePage";
+import { BASE_URL } from "../../pages/HomePage";
 
 const Images = ({ item, setShowImage, setPopup }) => {
   const handlePopUp = () => {

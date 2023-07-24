@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import ImagePreview from "./imageList/ImagePreview";
-import Images from "./imageList/Images";
+import ImagePreview from "../components/imageList/ImagePreview";
+import Images from "../components/imageList/Images";
 
 export const BASE_URL = "https://image-gallery-mern.vercel.app";
 
